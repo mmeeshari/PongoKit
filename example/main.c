@@ -6,7 +6,8 @@ void m_preboot_hook()
 {
     puts("Called pre-boot hook");
     /* Do patches here */
-    existing_preboot_hook();
+    if (existing_preboot_hook != NULL)
+    	existing_preboot_hook();
     return;
 }
 
