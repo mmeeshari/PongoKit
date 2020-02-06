@@ -1,8 +1,12 @@
 #include <pongo.h>
 
+void (*existing_preboot_hook)();
+
 void m_preboot_hook()
 {
     puts("Called pre-boot hook");
+    /* Do patches here */
+    existing_preboot_hook();
     return;
 }
 
@@ -12,6 +16,7 @@ void hello() {
 }
 
 void module_entry() {
+    existing_preboot_hook = preboot_hook;
     preboot_hook = m_preboot_hook;
     command_register("hello", "Hello world!", hello);
 }
