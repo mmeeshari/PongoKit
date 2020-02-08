@@ -24,6 +24,6 @@ void module_entry() {
 
 char* module_name = "test_module";
 
-struct llktrw_exports exported_symbols[] = {
+struct pongo_exports exported_symbols[] = {
     {.name = 0, .value = 0}
 };

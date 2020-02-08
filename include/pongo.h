@@ -126,7 +126,7 @@ extern void register_irq_handler(uint16_t irq_v, struct task* irq_handler);
 
 /* Core functions */
 
-struct llktrw_exports {
+struct pongo_exports {
     const char* name;
     void * value;
 };
